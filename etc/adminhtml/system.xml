@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="example_core_tab" translate="label" sortOrder="888">
+            <label>Remote System</label>
+        </tab>
+        <section id="example_core_setting" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Setting</label>
+            <tab>example_core_tab</tab>
+            <resource>Grayson_SysConfigExample::example_core_setting</resource>
+            <group id="setting_ip" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Setting</label>
+                <field id="field_ip" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Ip Address</label>
+                </field>
+                <field id="field_port" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Port</label>
+                </field>
+                <field id="field_username" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Username</label>
+                </field>
+                <field id="password" translate="label" type="obscure" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Password</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
